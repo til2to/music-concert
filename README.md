@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# A Website For A Music Concert
+# A Website For A Music Concert Program
 
 > This is a capstone project for a musical concert.
 > This project includes only:
@@ -25,9 +25,19 @@ To get a local copy, follow these simple example steps.
 - Open the index.html file with your favorite browser.
 - Modify the design with your preferred text editor.
 
+### Prerequisites
+> Vs Code
+
+### Install
+> linters for javascript, css and html
+
+### Deployment
+
+> Github
+
 ## Authors
 
-👤 **Dennis Owusu**
+👤 **Owusu Dennis Prah**
 
 - GitHub: [@githubhandle](https://github.com/til2to)
 
