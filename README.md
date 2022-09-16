@@ -1,42 +1,35 @@
-# Project Name
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-## portfolio projects
+# A Website For A Music Concert
 
-> This is a website about showing projects that I have done.
+> This is a capstone project for a musical concert.
+> This project includes only:
+- The home page
+- The about page
 
-## Getting Started
-
-### Prerequisites
-> Vs Code
-
-### Setup
-
-### Install
-> linters for javascript, css and html
-
-### Deployment
-
-> Github
 
 ## Built With
 
-- css
-- html
-- Javascript
+- HTML, CSS, Javascript and Bootstrap
+
+
+## Live Demo
+> Link will be uploaded soon
+
+## Getting Started
+
+To get a local copy, follow these simple example steps.
+
+- Clone the repo to your local environment
+- Run npm install to install all dependencies
+- Open the index.html file with your favorite browser.
+- Modify the design with your preferred text editor.
 
 ## Authors
 
-👤 **Author1**
+👤 **Dennis Owusu**
 
-### Owusu Dennis Prah
-
-👤 **Author2**
-
-### Kwasi Antwi
-
-## Live Demo
-
-- GitHub: [@til2to](https://til2to.github.io/porfolio_projects/)
+- GitHub: [@githubhandle](https://github.com/til2to)
 
 ## 🤝 Contributing
 
@@ -44,15 +37,12 @@ Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
 
-## Show your support
-
-Give a ⭐️ if you like this project!
-
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- [Cindy Shin in Behance](https://www.behance.net/adagio07)
+- Microverse' linting procedures
+- [Fontawesome](https://fontawesome.com/icons)
+- [Global ERG Summit](https://globalergsummit.com/)
 
 ## 📝 License
 
