@@ -6,6 +6,11 @@
   text-align: center;
 }
 
+.banner-description {
+  background-color: white;
+  border: 1px solid lightgray;
+}
+
 #banner-section .banner-description {
   text-align: center;
   width: 50%;
@@ -15,9 +20,4 @@
 
 .about-contact {
   text-align: center;
-}
-
-.banner-description {
-  background-color: white;
-  border: 1px solid lightgray;
 }
