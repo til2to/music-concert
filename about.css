@@ -6,15 +6,18 @@
   text-align: center;
 }
 
-#banner-section .main-title {
-  text-align: center;
-}
-
 #banner-section .banner-description {
   text-align: center;
-  width: 100%;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
 .about-contact {
   text-align: center;
+}
+
+.banner-description {
+  background-color: white;
+  border: 1px solid lightgray;
 }
