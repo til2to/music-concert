@@ -872,7 +872,7 @@ section#about-wrapper section#main-program-section div.card div.program-overlay 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   #banner-section .main-title {
-    width: 80%;
+    width: 100%;
     letter-spacing: 2px;
     line-height: 80px;
     font-size: 5rem;
