@@ -1,157 +1,79 @@
-const toggleBtn = document.querySelector('#toggleBtn');
-const ulElem = document.querySelector('#menuList');
-const projectContainer = document.querySelector('#project-list');
-const modalContainer = document.querySelector('#detail');
-const modalMainContainer = document.querySelector('#detail1');
-const lists = document.querySelectorAll('#menuList li a');
-const closeBtn = document.querySelector('#btn_close');
-const blurGround = document.querySelector('.blurBg');
-const contactForm = document.getElementById('contact-form');
-const errorMsg = document.querySelector('#submitMessage');
+const sideBar = document.querySelector('#sidebar');
+const openSideBarBtn = document.querySelector('.navbar-toggler');
+const closeSideBarBtn = document.querySelector('.close-btn');
+const featuredListContainer = document.querySelector('.speakers-list');
 
-toggleBtn.addEventListener('click', () => {
-  ulElem.style.display = 'block';
+// Open and Close Nav Menu On Small Screens
+openSideBarBtn.addEventListener('click', () => {
+  sideBar.style.display = 'block';
 });
 
-closeBtn.addEventListener('click', () => {
-  ulElem.style.display = 'none';
+closeSideBarBtn.addEventListener('click', () => {
+  sideBar.style.display = 'none';
 });
 
-lists.forEach((list) => {
-  list.addEventListener('click', () => {
-    ulElem.style.display = 'none';
-  });
-});
-
-const projectArray = [
+// Speakers Array
+const speakers = [
   {
-    name: 'Multi-Post Stories',
-    description: 'A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text.',
-    img: './images/placeholder.png',
-    technologies: ['css', 'html', 'javascript', 'Ruby'],
-    linkDemo: 'https://til2to.github.io/porfolio_projects/',
-    sourceCode: 'https://github.com/til2to/porfolio_projects/tree/main',
+    img: 'assets/users/100_1.jpg',
+    name: 'Yochai Benkler',
+    profession: 'Berkman Professor of Entrepreneurial Legal Studies atHarvard Law School',
+    description: 'Benkler studies commons-based peer production, and published his seminal book The Wealth of Networks in 2006',
   },
   {
-    name: 'Multi-Post Stories',
-    description: 'A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text.',
-    img: './images/placeholder.png',
-    technologies: ['css', 'html', 'javascript', 'Ruby'],
-    linkDemo: 'https://til2to.github.io/porfolio_projects/',
-    sourceCode: 'https://github.com/til2to/porfolio_projects/tree/main',
+    img: 'assets/users/100_3.jpg',
+    name: 'Yochai Benkler',
+    profession: 'Berkman Professor of Entrepreneurial Legal Studies atHarvard Law School',
+    description: 'Kilname Chon helped bring the Internet to Asia and is an outspoken advocate for the open web and digital commons.',
   },
   {
-    name: 'Multi-Post Stories',
-    description: 'A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text.',
-    img: './images/placeholder.png',
-    technologies: ['css', 'html', 'javascript', 'Ruby'],
-    linkDemo: 'https://til2to.github.io/porfolio_projects/',
-    sourceCode: 'https://github.com/til2to/porfolio_projects/tree/main',
+    img: 'assets/users/100_2.jpg',
+    name: 'SohYeong Noh',
+    profession: 'Director of Art Centre Nabi and a board member of CC Korea',
+    description: 'As the main venue for new media art production in Korea, Nabi promotes cross-disciplinary collaboration and understanding among science technology, humanities and the arts.',
   },
   {
-    name: 'Multi-Post Stories',
-    description: 'A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text.',
-    img: './images/placeholder.png',
-    technologies: ['css', 'html', 'javascript', 'Ruby'],
-    linkDemo: 'https://til2to.github.io/porfolio_projects/',
-    sourceCode: 'https://github.com/til2to/porfolio_projects/tree/main',
+    img: 'assets/users/100_4.jpg',
+    name: 'Julia Leda',
+    profession: 'President of Young Pirates of Europe',
+    description: 'European ingetration political democracy and participation of youth through online as her major condem',
+  },
+  {
+    img: 'assets/users/100_7.jpg',
+    name: 'Lila Tretikov',
+    profession: 'Director of Art Centre Nabi and a board member of CC Korea',
+    description: 'Lila Tretikov is the European ingetration political democracy and participation of youth through online as her major condem',
+  },
+  {
+    img: 'assets/users/100_6.jpg',
+    name: 'Ryan Becker',
+    profession: 'Music Coordinator',
+    description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, voluptatem.',
   },
 ];
 
-projectArray.forEach((project, index) => {
-  let tech = '';
-  project.technologies.forEach((item) => {
-    tech += `<li class="tech-item">
-    <span>${item}</span>
-    </li>`;
-  });
-
-  const projectItem = `<section class="ellipse_19">
-    <figure class="img_placeholder">
-      <img class="imagePlaceholder" src=${project.img} alt="project image">
-    </figure>
-
-    <section class="post_info">
-      <article>
-        <h2 class="title_post">${project.name}</h2>
-      </article>
-      
-      <article>
-        <p>
-          ${project.description}
-        </p>
-      </article>
-
-      <article class="tags">
-        <ul>
-          ${tech}
-        </ul>
-      </article>
-
-      <button class="button" id=${index}>See Projects</button>
-    </section>
-  </section>`;
-
-  projectContainer.innerHTML += projectItem;
-});
-
-const projectBtns = document.querySelectorAll('.button');
-
-const modalBtn = document.querySelector('#modal-close');
-
-modalBtn.addEventListener('click', () => {
-  modalMainContainer.style.display = 'none';
-  blurGround.style.filter = 'blur(0)';
-  blurGround.style.opacity = '1';
-});
-
-const modalContent = (project) => {
-  blurGround.style.opacity = '0.15';
-
-  const modal = `
-  <section class="title">
-    <h2>${project.name}</h2>
-  </section>
-
-  <figure><img src='./images/portfolio.png' alt="Project Image"></figure>
-  <p>${project.description}.</p>
-
-  <ul class="tags">
-    <li>html</li>
-    <li>Ruby on rails</li>
-    <li>CSS</li>
-  </ul>
-
-  <section id="button-group">
-    <button type="button" class="demo-button">
-      <span>See Live</span> 
-      <span><img id="live-icon" src="./images/live.png" alt="live icon"></span>
-    </button>
-    <button type="button" class="source-button">
-      <span>See Source</span> 
-      <span><img class="github-icon" src="./images/one.png" alt="live icon"></span>
-    </button> 
-  </section>
-`;
-
-  modalContainer.innerHTML = modal;
-  modalMainContainer.style.display = 'block';
-};
-
-projectBtns.forEach((projectBtn) => {
-  projectBtn.addEventListener('click', (e) => {
-    const getBtnId = e.target.getAttribute('id');
-    const projectObj = projectArray[getBtnId];
-    modalContent(projectObj);
-  });
-});
-
-contactForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const email = contactForm.elements.value;
-  if (email === email.toLowerCase()) {
-    contactForm.submit();
-  } else {
-    errorMsg.innerText = 'Email should be in lowercase';
-  }
+speakers.forEach((speaker) => {
+  featuredListContainer.innerHTML += `<div class="col-lg-6 col-sm-12 col-12">
+  <div class="card speaker-card">
+    <div class="card-body d-flex align-items-center">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-5 col-5">
+          <img src="${speaker.img}" width="100%" alt="" />
+        </div>
+        <div class="col-lg-8 col-sm-7 col-7">
+          <div class="profile-info">
+            <h5 class="font-weight-boldest">${speaker.name}</h5>
+            <span class="d-block font-italic orange-text"
+              >${speaker.profession}</span
+            >
+            <span class="speaker-line"></span>
+            <p>
+              ${speaker.description}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>`;
 });
